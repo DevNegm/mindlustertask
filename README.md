@@ -93,6 +93,7 @@ src/
 ├── App.jsx
 ├── index.css
 └── main.jsx
+
 ⚙️ Installation
 1. Clone repo
 git clone https://github.com/DevNegm/mindlustertask.git
@@ -217,7 +218,7 @@ Completed according to requirements:
 
 📸 Preview
 
-
+https://mindlustertask.vercel.app/
 
 👨‍💻 Author
 

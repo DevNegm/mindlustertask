@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { createTask } from '../api/main';
 import TaskForm from './TaskForm'
 
 const NewTask = ({ columnId, setNewTask }) => {
+    const queryClient = useQueryClient();
     const [error, setError] = useState('');
     const [taskData, setTaskData] = useState({
         title: '',
@@ -15,6 +16,7 @@ const NewTask = ({ columnId, setNewTask }) => {
     const createMutation = useMutation({
         mutationFn: ({ columnId, taskData }) => createTask(columnId, taskData),
         onSuccess: () => {
+            queryClient.invalidateQueries(["columns"], { refetchType: 'background' })
             handleCancel();
         },
     });

@@ -3,25 +3,27 @@ import { MdDeleteOutline, MdEdit } from 'react-icons/md'
 import { getPriorityColors, modalStyles } from '../utils/helpers'
 import { Box, Modal, Typography } from '@mui/material'
 import { deleteTask, updateTask } from '../api/main'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import TaskBody from './TaskBody'
 import TaskForm from './TaskForm'
 
 
 const Task = ({ task, columnId }) => {
+    const queryClient = useQueryClient();
     const [taskData, setTaskData] = useState(task)
     const [isEditing, setIsEditing] = useState(false)
     const [showModal, setShowModal] = useState(false);
-
     const editMutation = useMutation({
         mutationFn: ({ columnId, taskData }) => updateTask(columnId, taskData),
         onSuccess: () => {
+            queryClient.invalidateQueries(["columns"], { refetchType: 'background' })
             setIsEditing(false)
         },
     });
     const deleteMutation = useMutation({
         mutationFn: ({ columnId, taskId }) => deleteTask(columnId, taskId),
         onSuccess: () => {
+            queryClient.invalidateQueries(["columns"], { refetchType: 'background' })
             setShowModal(false)
         },
     });
@@ -39,7 +41,7 @@ const Task = ({ task, columnId }) => {
 
     const PriorityColor = getPriorityColors(task?.priority).color
     const PriorityBgColor = getPriorityColors(task?.priority).bg
-   
+
 
     return (
         <div className='group p-4 rounded-lg flex flex-col gap-4 bg-white border border-zinc-100 cursor-grab'>

@@ -218,7 +218,7 @@ Completed according to requirements:
 
 📸 Preview
 
-https://mindlustertask.vercel.app/
+visit this link : https://mindlustertask.vercel.app/
 
 👨‍💻 Author
 

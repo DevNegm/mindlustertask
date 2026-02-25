@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const LOCAL_BASE_URL = "http://localhost:4000/columns";
-const BASE_URL = "https://mindlustermockapi.onrender.com";
+const BASE_URL = "https://mindlustermockapi.onrender.com/columns";
 
 export const getColumns = async () => {
   const res = await axios.get(BASE_URL);

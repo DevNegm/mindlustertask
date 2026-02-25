@@ -1,0 +1,58 @@
+{
+  "columns": [
+    {
+      "id": "1",
+      "title": "To Do",
+      "status_color": "#64748b",
+      "tasks": [
+        {
+          "title": "aaa",
+          "description": "aaaa",
+          "priority": "LOW",
+          "column": "1",
+          "id": 1771984024045
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "In Progress",
+      "status_color": "#3b82f6",
+      "tasks": [
+        {
+          "title": "hello",
+          "description": "s",
+          "priority": "HIGH",
+          "column": "2",
+          "id": 1771982771502
+        },
+        {
+          "title": "ahmed",
+          "description": "ahmed",
+          "priority": "HIGH",
+          "column": "2",
+          "id": 1771984681294
+        },
+        {
+          "title": "tes",
+          "description": "tes",
+          "priority": "LOW",
+          "column": "2",
+          "id": 1771982640257
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "In Review",
+      "status_color": "#8b5cf6",
+      "tasks": []
+    },
+    {
+      "id": "4",
+      "title": "Done",
+      "status_color": "#22c55e",
+      "tasks": []
+    }
+  ]
+}

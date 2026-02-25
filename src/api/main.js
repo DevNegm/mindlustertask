@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:4000/columns";
+const LOCAL_BASE_URL = "http://localhost:4000/columns";
+const BASE_URL = "https://mindlusterapi.onrender.com";
 
 export const getColumns = async () => {
   const res = await axios.get(BASE_URL);
